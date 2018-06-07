@@ -1,0 +1,11 @@
+Reference: https://www.marksanborn.net/linux/extract-without-first-directory/
+Useful tar command to extract tar to a destination folder and extract w/o first directory
+tar xvf foo.tar.gz -C /path/to/dest --strip 1
+
+Reference: https://sites.google.com/a/kossboss.com/main/linux---move-running-to-process-nohup
+Suspend foreground process: ctrl-z
+Show the status of all background and suspended jobs: jobs -l
+Bring a job to the foreground: fg %jobnumber
+Bring a job to the background: bg %jobnumber
+Disown job in background to have it keep running even when terminal closes, equivalent to nohup: disown -h 
+Note: once you disown the process or nohup it you cannot reclaim it. You must kill it if you want to cancel it.
