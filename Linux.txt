@@ -4,6 +4,11 @@ tar xvf foo.tar.gz -C /path/to/dest --strip 1
 # unzip to directory
 unzip -d exdir
 
+# find and replace all occuring strings in current folder
+find . -type f -exec sed -i 's#orig_string#replace_string#g' {} +
+# get files where string matches in current folder
+grep -rnw . -e 'text'
+
 # Reference: https://sites.google.com/a/kossboss.com/main/linux---move-running-to-process-nohup
 # Suspend foreground process
 ctrl-z
