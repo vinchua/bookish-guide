@@ -1,29 +1,33 @@
 # Reference: https://www.marksanborn.net/linux/extract-without-first-directory/
-# Useful tar command to extract tar to a destination folder and extract w/o first directory
+## TAR
+# extract tar to a destination folder and extract w/o first directory
 tar xvf foo.tar.gz -C /path/to/dest --strip 1
 # unzip to directory
 unzip -d exdir
 
+## FIND
 # find and replace all occuring strings in current folder
 find . -type f -exec sed -i 's#orig_string#replace_string#g' {} +
+
+## GREP
 # get files where string matches in current folder
 grep -rnw . -e 'text'
 
-# Reference: https://sites.google.com/a/kossboss.com/main/linux---move-running-to-process-nohup
-# Suspend foreground process
-ctrl-z
-# Show the status of all background and suspended jobs: 
-jobs -l
-# Bring a job to the foreground: 
-fg %jobnumber
-# Bring a job to the background: 
-bg %jobnumber
-# Disown job in background, equivalent to nohup: 
-disown -h
-
-# scp
+## SCP
 scp user@host1:file user@host2:file2
 
+# follow tail of growing text file
+tail -f file
+
+## RSYNC
+# faster way of deleting large folder
+rsync -a --delete empty/ foldertodelete/ && rm -rf foldertodelete/
+
+## SED / CUT / AWK / TR
+# use cut to get only a portion of path. ex. /1/2/3/4 --> /1/2
+echo /1/2/3/4 | cut -d'/' -f1-3
+
+## GIT
 # delete remote branch
 git push --delete git@github.com:vinchua/bookish-guide branch
 # revert local commits and return to origin
@@ -35,4 +39,6 @@ git read-tree --prefix=subdir -u repo/branch:subdir
 # subtree
 git subtree add --prefix subtree-name repo branch
 git subtree pull --prefix subtree-name repo branch
+
+
 
