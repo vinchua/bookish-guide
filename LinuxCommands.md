@@ -42,7 +42,7 @@ rsync -a --include=/{,'folder1/'{,'folderA/***','folderB/***'}} \
 ```
 
 ### BASH
-# Simple array echo
+Simple array echo
 ```
 array=( 1 2 3 4)
 for i in "${array[@]}"
@@ -58,13 +58,13 @@ use cut to get only a portion of path. ex. /1/2/3/4 --> /1/2
 ### GIT
 delete remote branch
 `git push --delete git@github.com:vinchua/bookish-guide branch`
-# revert local commits and return to origin
+revert local commits and return to origin
 `git reset --hard origin/branch`
-# add subdir of remote repo 
+add subdir of remote repo 
 `git remote add -f -t develop --no-tags subdir repo`
-# update subdir with changes the repo
+update subdir with changes the repo
 `git read-tree --prefix=subdir -u repo/branch:subdir`
-# subtree
+subtree
 `git subtree add --prefix subtree-name repo branch`
 `git subtree pull --prefix subtree-name repo branch`
 
