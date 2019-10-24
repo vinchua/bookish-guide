@@ -2,12 +2,14 @@
 Reference: https://www.marksanborn.net/linux/extract-without-first-directory/
 extract tar to a destination folder and extract w/o first directory
 `tar xvf foo.tar.gz -C /path/to/dest --strip 1`
+
 unzip to directory
 `unzip -d <directory>`
 
 ### FIND
 find and replace all occuring strings in current folder
 `find . -type f -exec sed -i 's#orig_string#replace_string#g' {} +`
+
 get all folders last modified 14 or more days and delete them
 ```
 find /path -maxdepth 1 -mindepth 1 -mtime +14 -type d \
@@ -28,6 +30,7 @@ get files where string matches in current folder
 ### RSYNC
 faster way of deleting large folder
 `rsync -av --delete empty/ foldertodelete/ && rm -rf foldertodelete/`
+
 copy only selected contents of one folder to another
 ```
 rsync -av --include="folder1" \
@@ -58,12 +61,16 @@ use cut to get only a portion of path. ex. /1/2/3/4 --> /1/2
 ### GIT
 delete remote branch
 `git push --delete git@github.com:vinchua/bookish-guide branch`
+
 revert local commits and return to origin
 `git reset --hard origin/branch`
+
 add subdir of remote repo 
 `git remote add -f -t develop --no-tags subdir repo`
+
 update subdir with changes the repo
 `git read-tree --prefix=subdir -u repo/branch:subdir`
+
 subtree
 `git subtree add --prefix subtree-name repo branch`
 `git subtree pull --prefix subtree-name repo branch`
